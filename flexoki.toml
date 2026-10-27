@@ -1,0 +1,49 @@
+# =============================================================================
+# Flexoki Light for Herdr
+# -----------------------------------------------------------------------------
+# Flexoki by Steph Ango — https://stephango.com/flexoki (MIT)
+# https://github.com/kepano/flexoki
+#
+# Herdr 0.9.x has no external theme loader. A theme is a [theme] block in
+# ~/.config/herdr/config.toml. Herdr's UI has exactly 19 color tokens; this
+# overrides all of them, so the base theme only matters for token roles we
+# don't set (none). We use a light base to avoid any dark fallback.
+#
+# Accents use the 600-level Flexoki values (the "light colors" set, made for
+# light backgrounds). Text/backgrounds use the black/paper/base ramp.
+# This matches Ghostty's built-in flexoki-light (bg #FFFCF0, fg #100F0F)
+# and kepano/flexoki-neovim.
+#
+# Panels and sidebar are transparent ("reset") so the host terminal's paper
+# background shows through — intended for translucent/blurred terminals and
+# transparent Neovim setups. For solid Flexoki surfaces, replace the two
+# "reset" values below with "#F2F0E5".
+# =============================================================================
+[theme]
+name = "catppuccin-latte" # light base — every token below is overridden
+
+[theme.custom]
+# --- Surfaces ---------------------------------------------------------------
+panel_bg       = "reset"    # transparent: host terminal's paper shows through
+sidebar_bg     = "reset"    # transparent sidebar
+active_row_bg  = "#E6E4D9" # base-100  active space / focused agent row
+selection_bg   = "#DAD8CE" # base-150  navigate-mode cursor row
+surface0       = "#E6E4D9" # base-100  selected / focused items
+surface1       = "#CECDC3" # base-200  hover / active surfaces
+surface_dim    = "#E6E4D9" # base-100  separators
+
+# --- Text -------------------------------------------------------------------
+text           = "#100F0F" # black     primary text (matches terminal fg)
+subtext0       = "#6F6E69" # base-600  subdued text / dim labels
+overlay0       = "#9F9D96" # base-400  muted secondary info
+overlay1       = "#878580" # base-500  brighter muted text
+
+# --- Accents ----------------------------------------------------------------
+accent         = "#205EA6" # blue-600   highlights, borders, navigation
+blue           = "#205EA6" # blue-600   unseen / done notification
+teal           = "#24837B" # cyan-600   notification / unseen markers
+green          = "#66800B" # green-600  done / idle states
+yellow         = "#AD8301" # yellow-600 working / running states
+peach          = "#BC5215" # orange-600 interrupted / warning states
+red            = "#AF3029" # red-600    blocked / needs attention
+mauve          = "#5E409D" # purple-600 branch / special labels
